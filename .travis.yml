@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - docker build --build-arg BITBUCKET_USER=$BITBUCKET_USER -t moussavdb/application-yildiz_online:latest -t moussavdb/application-yildiz_online:build_$TRAVIS_BUILD_NUMBER .
+  - docker build --build-arg BITBUCKET_USER=yildiz -t moussavdb/application-yildiz_online:latest -t moussavdb/application-yildiz_online:build_$TRAVIS_BUILD_NUMBER .
 script:
   - docker images moussavdb/application-yildiz_online
   
