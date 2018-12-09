@@ -1,0 +1,16 @@
+sudo: required
+
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t moussavdb/application-yildiz_online:latest -t moussavdb/application-yildiz_online:build_$TRAVIS_BUILD_NUMBER .
+script:
+  - docker images moussavdb/application-yildiz_online
+  
+after_success:
+  - docker login -u="moussavdb" -p="$DOCKER_PASSWORD";
+    docker push moussavdb/application-yildiz_online:latest;
+    docker push moussavdb/application-yildiz_online:build_$TRAVIS_BUILD_NUMBER;
