@@ -2,7 +2,7 @@
 FROM alpine/git as clone
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
-RUN git clone https://$BITBUCKET_USER:$BITBUCKET_TOKEN@bitbucket.org/yildiz-online-team/game-server.git
+RUN git clone https://yildiz:3p37DyAeEEMbZUmcD2wM@bitbucket.org/yildiz-online-team/game-server.git
 
 FROM moussavdb/build-java as build
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
