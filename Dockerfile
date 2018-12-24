@@ -5,7 +5,8 @@ ARG BITBUCKET_USER
 ARG BITBUCKET_TOKEN
 WORKDIR /app
 RUN git clone https://$BITBUCKET_USER:$BITBUCKET_TOKEN@bitbucket.org/yildiz-online-team/game-server.git
-RUN ls
+RUN cd game-server
+RUN git log -p -1
 
 FROM moussavdb/build-java as build
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
