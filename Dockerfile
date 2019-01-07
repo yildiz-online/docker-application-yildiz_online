@@ -6,13 +6,6 @@ ARG BITBUCKET_TOKEN
 WORKDIR /app
 RUN git clone https://$BITBUCKET_USER:$BITBUCKET_TOKEN@bitbucket.org/yildiz-online-team/game-server.git
 RUN cd game-server
-RUN ls
-
-FROM alpine/git as history
-MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
-WORKDIR /app
-COPY --from=clone /app/game-server /app
-RUN git log -p -2
 
 FROM moussavdb/build-java as build
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
