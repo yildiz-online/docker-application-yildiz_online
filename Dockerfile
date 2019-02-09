@@ -1,4 +1,3 @@
-p
 FROM alpine/git as clone
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 ARG BITBUCKET_USER
