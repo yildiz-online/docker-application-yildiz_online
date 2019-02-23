@@ -6,7 +6,7 @@ WORKDIR /app
 RUN git clone https://$GH_TOKEN@github.com/yildiz-online/game-server
 RUN cd game-server
 
-FROM moussavdb/build-java as build
+FROM moussavdb/build-java-dependencies as build
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
 COPY --from=clone /app/game-server /app
