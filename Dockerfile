@@ -1,9 +1,9 @@
 FROM alpine/git as clone
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
-ARG BITBUCKET_USER
-ARG BITBUCKET_TOKEN
+ARG GH_TOKEN
+ARG REPO
 WORKDIR /app
-RUN git clone --branch develop https://$BITBUCKET_USER:$BITBUCKET_TOKEN@bitbucket.org/yildiz-online-team/game-server.git
+RUN git clone https://$GH_TOKEN@github.com/yildiz-online/game-server
 RUN cd game-server
 
 FROM moussavdb/build-java as build
