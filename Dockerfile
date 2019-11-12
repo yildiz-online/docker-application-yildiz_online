@@ -10,7 +10,7 @@ FROM moussavdb/build-java-dependencies as build
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
 WORKDIR /app
 COPY --from=clone /app/game-server /app
-RUN mvn install -s settings.xml
+RUN mvn install -s settings.xml -Pbuild-assembly
 
 FROM moussavdb/runtime-java
 MAINTAINER Grégory Van den Borre <vandenborre.gregory@hotmail.fr>
